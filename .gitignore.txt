@@ -1,1 +1,1 @@
-config
+ide-config
