@@ -1,0 +1,71 @@
+CONFIGURAÇÃO INICIAL DO GIT:
+	- config --global user.name "nome"
+	- config --global user.email "e-mail do git"
+
+Criando um repositório: 
+	git init - inicia um repositorio (cria uma pasta .git oculta)
+
+Comando para ver o status	
+	git status - Mostra o status atual do repositorio
+
+Criação ou alterações dos arquivos no repositorio criado. Exemplo: É criado um arquivo com o nome readme.md
+	git add readme.md -> Envia apenas o arquivo descrito
+	git add *.md -> irá adicionar todos os arquivos 
+	git add . -> irá adicionar todos os arquivos 
+
+
+(agora falta confirmar) tirar da stage area e mandar pro reporsitorio
+	git commit -m "commit inicial" (a mensagem para identificar seu commit)
+
+	git status (nothing to commit) nenhuma alteração pendente de salvação! diretório de trabalho vazio.
+
+-------------------------------------------------- -------------------------------------------------- ---
+IGNORANDO ARQUIVOS QUE É NECESSARIO:
+	Cria um arquivo .gitignore
+	Dentro dele coloca aquilo que vc quer ignorar:
+	.gitignore
+	ARQUIVO.txt(exemplo - arquivo)
+	temp/ (diretório)
+
+-------------------------------------------------- -------------------------------------------------- --
+MOSTRAR TODOS OS COMMITS
+	git log --pretty=oneline
+
+-------------------------------------------------- -------------------------------------------------- -
+
+GITHUB
+1) Você precisa dizer para sua conta do github que o seu pc pode acessar sua conta e gerenciar,
+   isso é feito através de uma chave ssh de login.
+   ssh-keygen (Gerando um par de chaves)
+   : depois disso vai apertando enter, e então ele irá mostrar o diretório de onde criou a chave.
+   : abra o id_rsa.pub (abra como txt)
+
+2) Leve o código na sua conta: config/ssh key
+CRIE SEU REPOSITÓRIO
+
+3) Clone o repositorio para sua maquina atraves do codigo ssh:
+   git clone git@github.com:VictorVoid/curso-git.git RENOMEIANDONOME
+
+4) adicione seus arquivos
+
+5) faça o processo de git status, adicione . , commit -m "mensagem de comit"
+
+6) Depois que fizer o commit, precisa mandar pro github:
+		git push
+
+FAZENDO COLABORAÇÕES:
+1) Ache o projeto que deseja colaborar
+2) Faça o Fork para sua conta
+3) Clone para sua máquina: git clone {ssh.link} nomedapastaEdit
+4) Modifique o que deseja modificar, depois git add ., commit ) e mande para o site
+	git push oring master
+5) Faça um pull request (ele manda para o autor)
+6) Novo pull request (diz o titulo e comentários...)
+7) enviar solicitação de pull
+SEU TRABALHO DE COLABORAÇÕES FORAM CONCLUIDAS (agora o autor vai ver se aprova suas modificações)
+
+-------------------------------------------------- -------------------------------------------------- --
+ATUALIZANDO UM FORK
+	git remote add suissa(usernamequalquer) giturl(basedofork)
+	git pull --rebase suissa master
+	git push -u
